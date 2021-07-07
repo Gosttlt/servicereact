@@ -20,7 +20,11 @@ export default function Home({
 
   return (
     <>
-      <TopBlockPage h1Target='телефонов' advantagesItems={advantagesItems} />
+      <TopBlockPage
+        h1Target='телефонов'
+        advantagesItems={advantagesItems}
+        city='Тольятти'
+      />
       <div className={s.serviceBox}>
         {isLoading ? (
           <Preloader />

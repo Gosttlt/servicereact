@@ -27,6 +27,7 @@ export default function HomePageContainer() {
       setActiveModel={onSetActiveModel}
       setLoadCompanyAndDevice={onSetLoadCompanyAndDevice}
       isLoading={onIsLoading}
+      city='Тольятти'
     />
   )
 }
