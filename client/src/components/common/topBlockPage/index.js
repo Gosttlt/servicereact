@@ -3,8 +3,6 @@ import LeftBlock from './leftBlock'
 import RightBlockImg from './rightBlockImg'
 import s from './s.module.css'
 
-
-
 export default function TopBlockPage({ h1Target, city, advantagesItems }) {
   return (
     <div className={s.topBlock}>
