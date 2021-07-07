@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router-dom'
 import s from 'components/header/headerTopBlock/s.module.css'
 import HeaderLogo from './headerLogo'
 import HeaderAddress from './headerAddress'
 import HeaderPhone from './headerPhone'
 import HeaderWorkingHours from './headerWorkingHours'
 import HeaderLogin from './headerLogin'
+import AccountIconHeader from './accountIconHeader'
+
 
 export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLogout }) {
 
@@ -15,15 +16,8 @@ export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLog
             <HeaderPhone phone="783-753" />
             <HeaderWorkingHours time="C 10-00 до 20-00" wokrWeek="Без выходных" />
             {isAuth &&
-                <div className={s.lkLoginBlock}>
-                    <NavLink to="/lk" className={s.faceNameBox}>
-                        <span className={`material-icons ${s.accountIcon}`}>
-                            account_circle
-                        </span>
-                        <div className={s.accountName}>
-                            {userName || userEmail}
-                        </div>
-                    </NavLink>
+                <div className={s.lkLoginBlock} >
+                    <AccountIconHeader icon="account_circle" userName={userName} userEmail={userEmail} />
                     <HeaderLogin icon="login" text="Вход" onClick={setAuthLogout} />
                 </div>
             }
