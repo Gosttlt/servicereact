@@ -1,11 +1,23 @@
-import { connect } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import ModelBlock from "."
 import { setLoadServices } from 'store/productReducer/productReducer'
-
-let mstp = (state) => ({
-    models: state.productPeducer.rowsModels,
-    activityWatcher: state.productPeducer.activityWatcher
-})
+import { getActivityWatcher, getModels } from "store/productReducer/selectors"
 
 
-export default connect(mstp, { setLoadServices })(ModelBlock)
+
+
+export default function ModelBlockContainer({ head }) {
+
+    const dispatch = useDispatch()
+    const models = useSelector(getModels)
+    const activityWatcher = useSelector(getActivityWatcher)
+
+    return (
+        <ModelBlock
+            models={models}
+            head={head}
+            activityWatcher={activityWatcher}
+            setLoadServices={() => dispatch(setLoadServices())} />)
+
+}
+

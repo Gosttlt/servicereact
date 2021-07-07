@@ -34,8 +34,7 @@ export default function Home({
             <CotegoryBlockContainer />
             <div className='h3 container'>Выберите device:</div>
             <DevicesBlockContainer />
-            <div className='h3 container'>Выберите модель:</div>
-            <ModelBlockContainer />
+            <ModelBlockContainer head='Выберите модель' />
             <TeblePriceContainer />
           </>
         )}

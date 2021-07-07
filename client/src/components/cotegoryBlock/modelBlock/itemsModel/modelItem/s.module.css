@@ -1,11 +1,5 @@
 /** @format */
 
-.modelBlock {
-  display: flex;
-  width: fit-content;
-  margin: 1rem 0;
-  flex-wrap: wrap;
-}
 .itemModel {
   border: 2px solid #bdbdbd;
   padding: 5px 10px;
@@ -30,9 +24,4 @@
 .itemModel.active .materialIcons {
   color: #fff;
   transition: 0.3s;
-}
-.materialIcons {
-  font-size: 18px;
-  margin-bottom: 1px;
-  margin-right: 5px;
 }
