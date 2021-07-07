@@ -1,5 +1,5 @@
 import React from 'react'
-import LeftBlock from './LeftBlock'
+import LeftBlock from './leftBlock'
 import RightBlockImg from './rightBlockImg'
 import s from './s.module.css'
 
