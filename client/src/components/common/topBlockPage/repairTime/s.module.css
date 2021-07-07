@@ -1,0 +1,15 @@
+/** @format */
+
+.repairTime {
+  background: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2px;
+  border: 1px solid #5f5f5f;
+  box-shadow: 3px 6px 10px rgb(121 121 121 / 50%);
+  margin: 20px 20px;
+}
