@@ -11,28 +11,6 @@
   display: flex;
   justify-content: space-around;
 }
-.topLeftBlock {
-  flex: 0 0 55%;
-  margin-top: 20px;
-}
-.topLeftBlock h1 {
-  color: #fff;
-}
-.topLeftBlock li {
-  color: #fff;
-  font-size: 20px;
-  padding: 10px 0;
-}
 .imageRight {
   width: 100%;
-}
-.topRightBlockImg {
-  background-image: url(images/home/homeTop.jpg);
-  height: 500px;
-  position: absolute;
-  right: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 40%;
-  top: 0;
 }

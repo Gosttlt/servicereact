@@ -3,6 +3,9 @@
 .advantages {
   display: flex;
   align-items: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 0;
 }
 .advantagesSvg {
   margin-right: 5px;
