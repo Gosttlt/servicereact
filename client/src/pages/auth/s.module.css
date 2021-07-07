@@ -1,0 +1,14 @@
+/** @format */
+
+.authBox {
+  text-align: center;
+  margin: 30px auto;
+  position: relative;
+}
+
+.errorMessage {
+  color: #e06b6b;
+  font-weight: bold;
+  height: 30px;
+  font-size: 18px;
+}

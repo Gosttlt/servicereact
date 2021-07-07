@@ -1,0 +1,59 @@
+/** @format */
+
+.topBlock {
+  background: #e06b6b;
+  position: relative;
+  height: 500px;
+  margin: 20px 0;
+  box-shadow: 11px 7px 10px rgb(171 171 171 / 50%);
+}
+.topContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.topLeftBlock {
+  flex: 0 0 55%;
+  margin-top: 20px;
+}
+.topLeftBlock h1 {
+  color: #fff;
+}
+.topLeftBlock li {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.imageRight {
+  width: 100%;
+}
+.topRightBlockImg {
+  background-image: url(images/home/homeTop.jpg);
+  height: 500px;
+  position: absolute;
+  right: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  top: 0;
+}
+.repairTime {
+  background: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2px;
+  border: 1px solid #5f5f5f;
+  box-shadow: 3px 6px 10px rgb(121 121 121 / 50%);
+  margin: 20px 20px;
+}
+.advantages {
+  display: flex;
+  align-items: center;
+}
+.advantagesSvg {
+  margin-right: 5px;
+  color: #fff;
+}

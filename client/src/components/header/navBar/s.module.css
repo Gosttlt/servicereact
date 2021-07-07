@@ -1,0 +1,43 @@
+/** @format */
+
+.navBar {
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 11px 7px 10px rgb(171 171 171 / 50%);
+  margin-bottom: 1rem;
+}
+.navBar li {
+  border-right: 1px solid #fff;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.navBar li:hover {
+  transition: 0.3s;
+  background: rgb(247 247 247);
+  color: #3c3c3c;
+}
+.navBar li:first-child {
+  border-left: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBox {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+.navBox li a {
+  display: flex;
+  height: 100%;
+  padding: 10px 5px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.metaName {
+  font-size: 18px;
+  margin-left: 5px;
+}

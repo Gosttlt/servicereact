@@ -1,0 +1,23 @@
+/** @format */
+
+.button {
+  padding: 10px 10px;
+  margin: 5px;
+  border: 1px solid #ffffff;
+  background: #e47878;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 5px 8px 14px 0px #e6e6e6;
+  transition: 0.3s;
+}
+.button:active {
+  box-shadow: 1px 8px 14px 0px #ffffff;
+}
+.button:disabled {
+  opacity: 0.5;
+}
+.button:hover {
+  background: #ea6262;
+}

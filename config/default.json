@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "mongoUri": "mongodb+srv://viktor:exemple123@cluster0.6mcs1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "exemple"
+}

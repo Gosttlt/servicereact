@@ -1,0 +1,38 @@
+/** @format */
+
+.modelBlock {
+  display: flex;
+  width: fit-content;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+.itemModel {
+  border: 2px solid #bdbdbd;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 5px 5px 5px rgb(171 171 171 / 50%);
+}
+.itemModel:hover,
+.itemModel.active {
+  border-color: #fff;
+  background: #9e9e9e;
+  transition: 0.3s;
+}
+.itemModel:active {
+  box-shadow: none;
+}
+.itemModel:hover .name,
+.itemModel:hover .materialIcons,
+.itemModel.active .name,
+.itemModel.active .materialIcons {
+  color: #fff;
+  transition: 0.3s;
+}
+.materialIcons {
+  font-size: 18px;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}

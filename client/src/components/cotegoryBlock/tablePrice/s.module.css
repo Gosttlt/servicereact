@@ -1,0 +1,56 @@
+/** @format */
+
+.tablePriceBlock {
+  margin: 10px 0 50px;
+}
+.tableHead {
+  display: flex;
+  border-bottom: 2px solid #e2e2e2;
+  justify-content: space-around;
+  padding: 10px;
+}
+.tableHead li {
+  font-weight: bold;
+  width: 33%;
+  text-align: center;
+}
+.tableRow {
+  display: flex;
+  border-bottom: 1px solid #e2e2e2;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+}
+.tableRow li {
+  width: 33%;
+  text-align: center;
+}
+.protectionGift {
+  color: #e06b6b;
+  display: inline-flex;
+  font-size: 14px;
+  margin-left: 20px;
+  position: relative;
+}
+.protectionIcon {
+  color: #e06b6b;
+  position: absolute;
+  font-size: 18px;
+  left: -18px;
+  top: -1px;
+}
+.newPrice {
+  font-weight: bold;
+  color: #e06b6b;
+}
+.oldPrice {
+  text-decoration: line-through;
+  margin-left: 5px;
+}
+.discountContent {
+  font-size: 12px;
+}
+.servicesBox {
+  position: relative;
+  min-height: 100px;
+}

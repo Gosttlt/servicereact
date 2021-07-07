@@ -1,0 +1,14 @@
+/** @format */
+
+.inputField input {
+  padding: 5px 20px 5px;
+  margin: 7px 0px 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.label {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+}
