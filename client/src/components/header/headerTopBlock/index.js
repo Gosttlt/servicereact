@@ -4,6 +4,7 @@ import HeaderLogo from './headerLogo'
 import HeaderAddress from './headerAddress'
 import HeaderPhone from './headerPhone'
 import HeaderWorkingHours from './headerWorkingHours'
+import HeaderLogin from './headerLogin'
 
 export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLogout }) {
 
@@ -23,25 +24,11 @@ export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLog
                             {userName || userEmail}
                         </div>
                     </NavLink>
-                    <NavLink to="/auth" onClick={setAuthLogout}>
-                        <div className={s.login}>
-                            <span className={`material-icons ${s.loginIcon}`}>
-                                logout
-                            </span>
-                            <div className={s.loginText}>Выход</div>
-                        </div>
-                    </NavLink>
+                    <HeaderLogin icon="login" text="Вход" onClick={setAuthLogout} />
                 </div>
             }
             {!isAuth &&
-                <NavLink to="/auth">
-                    <div className={s.login}>
-                        <span className={`material-icons ${s.loginIcon}`}>
-                            login
-                        </span>
-                        <div className={s.loginText}>Вход</div>
-                    </div>
-                </NavLink>
+                <HeaderLogin icon="login" text="Вход" />
             }
         </div>
     )

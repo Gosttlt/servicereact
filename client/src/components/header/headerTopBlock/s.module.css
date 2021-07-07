@@ -7,19 +7,6 @@
   font-size: 18px;
 }
 
-.login {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.login:hover .loginText,
-.login:hover .loginIcon {
-  transition: 0.3s;
-  color: #e06b6b;
-}
-.loginText {
-  margin-left: 5px;
-}
 .lkLoginBlock {
   display: flex;
   align-items: center;
