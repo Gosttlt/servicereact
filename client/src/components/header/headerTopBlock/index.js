@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import s from 'components/header/headerTopBlock/s.module.css'
-import logoImg from 'images/header/logo.jpeg'
+import HeaderLogo from './headerLogo'
+import HeaderAddress from './headerAddress'
+import HeaderPhone from './headerPhone'
+import HeaderWorkingHours from './headerWorkingHours'
 
 export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLogout }) {
 
@@ -9,7 +12,7 @@ export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLog
             <HeaderLogo />
             <HeaderAddress address="Тополиная 1а" />
             <HeaderPhone phone="783-753" />
-            <WorkingHours time="C 10-00 до 20-00" wokrWeek="Без выходных" />
+            <HeaderWorkingHours time="C 10-00 до 20-00" wokrWeek="Без выходных" />
             {isAuth &&
                 <div className={s.lkLoginBlock}>
                     <NavLink to="/lk" className={s.faceNameBox}>
@@ -45,39 +48,3 @@ export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLog
 }
 
 
-function HeaderLogo() {
-    return (
-        <NavLink to="/">
-            <div className={s.logo}>
-                <img alt="logo" src={logoImg} width="50" height="50" />
-                <div className={s.logoText}>Service24</div>
-            </div>
-        </NavLink>
-    )
-
-}
-function HeaderAddress({ address }) {
-    return (
-        <div className={s.address}>{address}</div>
-    )
-}
-function HeaderPhone({ phone }) {
-    return (
-        <div className={s.phoneBox}>
-            <span className={`material-icons ${s.phoneImg}`}>
-                phone_in_talk
-            </span>
-            <div className={s.phone}>{phone}</div>
-        </div>
-    )
-}
-function WorkingHours({ time, wokrWeek }) {
-    return (
-        <div className={s.workingHours}>
-            <div className={s.timeBox}>
-                <div>{time}</div>
-                <div>{wokrWeek}</div>
-            </div>
-        </div>
-    )
-}

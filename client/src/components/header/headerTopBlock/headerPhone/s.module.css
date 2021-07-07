@@ -1,0 +1,11 @@
+/** @format */
+
+.phoneBox {
+  display: flex;
+  align-items: center;
+}
+.phoneImg {
+  color: #e06b6b;
+  padding-top: 1px;
+  padding-right: 5px;
+}

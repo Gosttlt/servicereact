@@ -1,0 +1,9 @@
+/** @format */
+
+.workingHours {
+  text-align: center;
+}
+.timeBox {
+  display: flex;
+  flex-direction: column;
+}
