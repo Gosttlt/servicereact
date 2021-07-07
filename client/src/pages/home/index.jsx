@@ -12,7 +12,7 @@ import Preloader from 'components/common/preloader/preloader'
 export default function Home({
   setLoadCompanyAndDevice,
   isLoading,
-  AdvantagesItems,
+  advantagesItems,
 }) {
   useEffect(() => {
     setLoadCompanyAndDevice()
@@ -20,7 +20,7 @@ export default function Home({
 
   return (
     <>
-      <TopBlockPage h1Target='телефонов' AdvantagesItems={AdvantagesItems} />
+      <TopBlockPage h1Target='телефонов' advantagesItems={advantagesItems} />
       <div className={s.serviceBox}>
         {isLoading ? (
           <Preloader />

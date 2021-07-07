@@ -6,7 +6,7 @@ import {
   setActiveModel,
   setLoadCompanyAndDevice,
 } from 'store/productReducer/productReducer'
-import AdvantagesItems from 'utils/advantagesItems'
+import advantagesItems from 'utils/advantagesItems'
 import { getIsLoading } from 'store/productReducer/selectors'
 import { useCallback } from 'react'
 
@@ -23,7 +23,7 @@ export default function HomePageContainer() {
 
   return (
     <Home
-      AdvantagesItems={AdvantagesItems}
+      advantagesItems={advantagesItems}
       setActiveModel={onSetActiveModel}
       setLoadCompanyAndDevice={onSetLoadCompanyAndDevice}
       isLoading={onIsLoading}

@@ -49,11 +49,3 @@
   box-shadow: 3px 6px 10px rgb(121 121 121 / 50%);
   margin: 20px 20px;
 }
-.advantages {
-  display: flex;
-  align-items: center;
-}
-.advantagesSvg {
-  margin-right: 5px;
-  color: #fff;
-}

@@ -1,0 +1,10 @@
+/** @format */
+
+.advantages {
+  display: flex;
+  align-items: center;
+}
+.advantagesSvg {
+  margin-right: 5px;
+  color: #fff;
+}
