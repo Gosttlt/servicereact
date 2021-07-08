@@ -25,3 +25,8 @@
   color: #fff;
   transition: 0.3s;
 }
+.materialIcons {
+  font-size: 18px;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}

@@ -4,6 +4,7 @@ import ModelIcon from './modelIcon'
 import NameModel from './nameModel'
 
 export default function ModelItem({ model, active, keyName, onClick, typeDevice }) {
+    console.log(onClick);
     return (
         <div onClick={onClick} className={s.itemModel + ' ' + (active === keyName ? s.active : '')}>
             <ModelIcon icon={typeDevice} />

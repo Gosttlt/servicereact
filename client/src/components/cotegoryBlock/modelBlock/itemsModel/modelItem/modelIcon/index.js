@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './s.module.css'
+import s from 'components/cotegoryBlock/modelBlock/itemsModel/modelItem/s.module.css'
 
 export default function ModelIcon({ icon }) {
     return (

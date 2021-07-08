@@ -12,12 +12,15 @@ export default function ModelBlockContainer({ head }) {
     const models = useSelector(getModels)
     const activityWatcher = useSelector(getActivityWatcher)
 
+    const setLoadServicesHandler = (md) => {
+        dispatch(setLoadServices(md))
+    }
     return (
         <ModelBlock
             models={models}
             head={head}
             activityWatcher={activityWatcher}
-            setLoadServices={() => dispatch(setLoadServices())} />)
+            setLoadServices={setLoadServicesHandler} />)
 
 }
 
