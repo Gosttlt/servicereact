@@ -1,4 +1,4 @@
-import ModelHead from './modelHead'
+import CotegoryHead from 'components/cotegoryBlock/cotegoryHead'
 import ItemsModel from './itemsModel'
 
 
@@ -7,7 +7,7 @@ export default function ModelBlock({ models, activityWatcher, setLoadServices, h
     return (
         <div>
             <div className="container">
-                <ModelHead head={head} />
+                <CotegoryHead head={head} />
                 <ItemsModel models={models}
                     activityWatcher={activityWatcher}
                     setLoadServices={setLoadServices} />
