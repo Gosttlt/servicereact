@@ -14,7 +14,7 @@ export default function ItemsModel({ models, activityWatcher, setLoadServices })
                 model={item.name}
                 active={activityWatcher.model}
                 typeDevice={item.typeDevice} />),
-        [models, activityWatcher, activityWatcher])
+        [models, activityWatcher, setLoadServices])
 
     return (
         <div className={s.modelBlock}>

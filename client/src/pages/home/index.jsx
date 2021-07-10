@@ -1,23 +1,21 @@
 /** @format */
 
 import TopBlockPage from 'components/common/topBlockPage'
-import CotegoryBlockContainer from 'components/cotegoryBlock/cotegoryBlockContainer'
-import DevicesBlockContainer from 'components/cotegoryBlock/devicesBlock/devicesBlockContainer'
 import TeblePriceContainer from 'components/cotegoryBlock/tablePrice/teblePriceContainer'
 import ModelBlockContainer from 'components/cotegoryBlock/modelBlock/modelBlockContainer'
 import s from './s.module.css'
-import { useEffect } from 'react'
 import Preloader from 'components/common/preloader/preloader'
+import CotegoryBlock from 'components/cotegoryBlock'
 
 export default function Home({
-  setLoadCompanyAndDevice,
   isLoading,
   advantagesItems,
+  onActiveCompany,
+  onActiveDivece,
+  cotegoryCompony,
+  cotegoryDevices,
+  activityWatcher,
 }) {
-  useEffect(() => {
-    setLoadCompanyAndDevice()
-  }, [setLoadCompanyAndDevice])
-
   return (
     <>
       <TopBlockPage
@@ -30,10 +28,22 @@ export default function Home({
           <Preloader />
         ) : (
           <>
-            <div className='h1 container'>Выбирите фирму</div>
-            <CotegoryBlockContainer />
-            <div className='h3 container'>Выберите device:</div>
-            <DevicesBlockContainer />
+            <CotegoryBlock
+              head='Выбирите фирму'
+              cotegory={cotegoryCompony}
+              activityWatcher={activityWatcher.compony}
+              setActive={onActiveCompany}
+              name='cotegoryBox'
+              wh={100}
+            />
+            <CotegoryBlock
+              head='Выберите device'
+              cotegory={cotegoryDevices}
+              activityWatcher={activityWatcher.device}
+              setActive={onActiveDivece}
+              name='divaces'
+              wh={70}
+            />
             <ModelBlockContainer head='Выберите модель' />
             <TeblePriceContainer />
           </>
