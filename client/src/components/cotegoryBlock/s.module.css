@@ -1,9 +1,5 @@
 /** @format */
 
-.cotegoryBox {
-  display: flex;
-  flex-wrap: wrap;
-}
 .cotegoryItem {
   max-width: 10%;
   width: 100%;
@@ -32,10 +28,15 @@
   max-width: 100%;
 }
 
-.divaces {
+.company {
   display: flex;
   flex-wrap: wrap;
 }
-.divaces .cotegoryItem {
+
+.device {
+  display: flex;
+  flex-wrap: wrap;
+}
+.device .cotegoryItem {
   max-width: 6.5%;
 }

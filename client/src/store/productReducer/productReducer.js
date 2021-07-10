@@ -1,24 +1,14 @@
 import { productAPI } from "api";
 
-const SET_MODEL = 'productReducer/SET_MODEL'
-const SET_DEVICE = 'productReducer/SET_DEVICE'
-const SET_COMPANY = 'productReducer/SET_COMPANY'
-const SET_LOAD_COMPANY = 'productReducer/SET_LOAD_COMPANY'
-const SET_LOAD_DEVICE = 'productReducer/SET_LOAD_DEVICE'
+const SET_WATCHER = 'productReducer/SET_WATCHER'
+const SET_DATA_CATEGORY = 'productReducer/SET_DATA_CATEGORY'
 const SET_IS_LOADING = 'productReducer/SET_IS_LOADING'
 const SET_IS_LOADING_SERVICE = 'productReducer/SET_IS_LOADING_SERVICE'
-const SET_LOAD_MODEL = 'productReducer/SET_LOAD_MODEL'
 const SET_CURRENT_SERVICE = 'productReducer/SET_CURRENT_SERVICE'
 
 let initialState = {
     isLoading: false,
     isLoadingService: false,
-    rowsDevice: [
-        { key: 'iphone', name: 'iPhone', img: 'apple/iphone.jpg', keyCompany: 'apple' },
-    ],
-    rowsModels: [
-        { key: 'mackbookpro', name: 'MackBook Pro', deviceKey: 'mackbook', typeDevice: 'book' },
-    ],
     rows: [
         {
             _id: 3,
@@ -50,46 +40,18 @@ let initialState = {
 const productPeducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case SET_MODEL:
+        case SET_WATCHER:
             return {
                 ...state,
                 activityWatcher: {
                     ...state.activityWatcher,
-                    model: action.model
+                    [action.cat]: action.active
                 },
             }
-        case SET_DEVICE:
+        case SET_DATA_CATEGORY:
             return {
                 ...state,
-                activityWatcher: {
-                    ...state.activityWatcher,
-                    device: action.device
-                },
-                rowsModels: state.models.filter(r => r.deviceKey === action.device),
-            }
-        case SET_COMPANY:
-            return {
-                ...state,
-                activityWatcher: {
-                    ...state.activityWatcher,
-                    company: action.company,
-                },
-                rowsDevice: state.device.filter(r => r.keyCompany === action.company),
-            }
-        case SET_LOAD_COMPANY:
-            return {
-                ...state,
-                company: [...action.data]
-            }
-        case SET_LOAD_DEVICE:
-            return {
-                ...state,
-                device: [...action.data]
-            }
-        case SET_LOAD_MODEL:
-            return {
-                ...state,
-                models: [...action.data]
+                [action.name]: [...action.dataCategory]
             }
         case SET_IS_LOADING:
             return {
@@ -110,9 +72,8 @@ const productPeducer = (state = initialState, action) => {
             return state;
     }
 }
-export const setActiveModel = (model) => ({ type: SET_MODEL, model });
-export const setActiveDevice = (device) => ({ type: SET_DEVICE, device });
-export const setActiveCompany = (company) => ({ type: SET_COMPANY, company });
+export const setActiveWatcher = (active, cat) => ({ type: SET_WATCHER, active, cat });
+const setDataCategory = (name, dataCategory) => ({ type: SET_DATA_CATEGORY, name, dataCategory });
 export const setIsLoading = (isLoading) => ({ type: SET_IS_LOADING, isLoading });
 export const setIsLoadingService = (isLoading) => ({ type: SET_IS_LOADING_SERVICE, isLoading });
 export const setCurrentService = (services) => ({ type: SET_CURRENT_SERVICE, services })
@@ -124,12 +85,12 @@ export const setLoadCompanyAndDevice = () => async (dispatch) => {
     let dataModel = await productAPI.getModel()
     let dataService = await productAPI.getCurrentModel({ model: 'iphone5s' })
     dispatch(setIsLoading(false))
-    dispatch({ type: SET_LOAD_COMPANY, data: dataCompany.data })
-    dispatch({ type: SET_LOAD_DEVICE, data: dataDevice.data })
-    dispatch({ type: SET_LOAD_MODEL, data: dataModel.data })
-    dispatch(setActiveCompany('apple'))
-    dispatch(setActiveDevice('iphone'))
-    dispatch(setActiveModel('iphone5s'))
+    dispatch(setDataCategory('company', dataCompany.data))
+    dispatch(setDataCategory('device', dataDevice.data))
+    dispatch(setDataCategory('models', dataModel.data))
+    dispatch(setActiveWatcher('apple', 'company'))
+    dispatch(setActiveWatcher('iphone', 'device'))
+    dispatch(setActiveWatcher('iphone5s', 'model'))
     dispatch(setCurrentService(dataService))
 }
 export const setLoadServices = model => async (dispatch) => {
@@ -137,7 +98,7 @@ export const setLoadServices = model => async (dispatch) => {
     let data = await productAPI.getCurrentModel({ model })
     dispatch(setIsLoadingService(false))
     dispatch(setCurrentService(data))
-    dispatch(setActiveModel(model))
+    dispatch(setActiveWatcher(model, 'model'))
 }
 
 

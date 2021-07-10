@@ -4,26 +4,26 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import Home from '.'
 import {
-  setActiveCompany,
-  setActiveDevice,
-  setActiveModel,
+  setActiveWatcher,
   setLoadCompanyAndDevice,
 } from 'store/productReducer/productReducer'
 import advantagesItems from 'utils/advantagesItems'
 import {
   getActivityWatcher,
-  getCompony,
+  getCompany,
   getDevices,
   getIsLoading,
 } from 'store/productReducer/selectors'
 
 export default function HomePageContainer() {
   const dispatch = useDispatch()
-  const onSetActiveModel = () => dispatch(setActiveModel())
-  const onActiveCompany = company => dispatch(setActiveCompany(company))
-  const onActiveDivece = device => dispatch(setActiveDevice(device))
+
+  const onSetActiveWatcher = (active, cat) => {
+    dispatch(setActiveWatcher(active, cat))
+  }
+
   const activityWatcher = useSelector(getActivityWatcher)
-  const cotegoryCompony = useSelector(getCompony)
+  const cotegoryCompany = useSelector(getCompany)
   const onIsLoading = useSelector(getIsLoading)
   const cotegoryDevices = useSelector(getDevices)
 
@@ -34,13 +34,11 @@ export default function HomePageContainer() {
   return (
     <Home
       advantagesItems={advantagesItems}
-      setActiveModel={onSetActiveModel}
-      cotegoryCompony={cotegoryCompony}
+      cotegoryCompany={cotegoryCompany}
       cotegoryDevices={cotegoryDevices}
       isLoading={onIsLoading}
       activityWatcher={activityWatcher}
-      onActiveCompany={onActiveCompany}
-      onActiveDivece={onActiveDivece}
+      setActiveWatcher={onSetActiveWatcher}
       city='Тольятти'
     />
   )

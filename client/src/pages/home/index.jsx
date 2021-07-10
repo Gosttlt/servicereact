@@ -10,9 +10,8 @@ import CotegoryBlock from 'components/cotegoryBlock'
 export default function Home({
   isLoading,
   advantagesItems,
-  onActiveCompany,
-  onActiveDivece,
-  cotegoryCompony,
+  setActiveWatcher,
+  cotegoryCompany,
   cotegoryDevices,
   activityWatcher,
 }) {
@@ -30,18 +29,18 @@ export default function Home({
           <>
             <CotegoryBlock
               head='Выбирите фирму'
-              cotegory={cotegoryCompony}
-              activityWatcher={activityWatcher.compony}
-              setActive={onActiveCompany}
-              name='cotegoryBox'
+              cotegory={cotegoryCompany}
+              activityWatcher={activityWatcher.company}
+              setActive={setActiveWatcher}
+              name='company'
               wh={100}
             />
             <CotegoryBlock
               head='Выберите device'
               cotegory={cotegoryDevices}
               activityWatcher={activityWatcher.device}
-              setActive={onActiveDivece}
-              name='divaces'
+              setActive={setActiveWatcher}
+              name='device'
               wh={70}
             />
             <ModelBlockContainer head='Выберите модель' />
