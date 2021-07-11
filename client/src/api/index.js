@@ -19,8 +19,9 @@ export const authAPI = {
 }
 
 export const productAPI = {
-    getCompany: () => fetcher('api/product/company'),
-    getDevice: () => fetcher('api/product/device'),
-    getModel: () => fetcher('api/product/models'),
+    getCategory: async (category) => {
+        let data = await fetcher(`api/product/${category}`)
+        return data.data
+    },
     getCurrentModel: (modelKey) => fetcher(`api/modelsv`, 'POST', modelKey)
 }

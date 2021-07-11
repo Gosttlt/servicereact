@@ -21,15 +21,9 @@ let initialState = {
             discountContent: 'акция до 3 мая'
         }
     ],
-    company: [
-        { key: 'apple', name: 'Apple', img: 'apple/apple.jpeg' },
-    ],
-    device: [
-        { key: 'iphone', name: 'iPhone', img: 'apple/iphone.jpg', keyCompany: 'apple' }
-    ],
-    models: [
-        { key: 'iphone5s', name: 'iPhone 5s', deviceKey: 'iphone', typeDevice: 'mob' },
-    ],
+    company: [{ key: 'apple', name: 'Apple', img: 'apple/apple.jpeg' }],
+    device: [{ key: 'iphone', name: 'iPhone', img: 'apple/iphone.jpg', keyCompany: 'apple' }],
+    models: [{ key: 'iphone5s', name: 'iPhone 5s', deviceKey: 'iphone', typeDevice: 'mob' }],
     activityWatcher: {
         model: 'iphone5s',
         device: 'iphone',
@@ -80,14 +74,14 @@ export const setCurrentService = (services) => ({ type: SET_CURRENT_SERVICE, ser
 
 export const setLoadCompanyAndDevice = () => async (dispatch) => {
     dispatch(setIsLoading(true))
-    let dataCompany = await productAPI.getCompany()
-    let dataDevice = await productAPI.getDevice()
-    let dataModel = await productAPI.getModel()
+    let dataCompany = await productAPI.getCategory('company')
+    let dataDevice = await productAPI.getCategory('device')
+    let dataModel = await productAPI.getCategory('models')
     let dataService = await productAPI.getCurrentModel({ model: 'iphone5s' })
     dispatch(setIsLoading(false))
-    dispatch(setDataCategory('company', dataCompany.data))
-    dispatch(setDataCategory('device', dataDevice.data))
-    dispatch(setDataCategory('models', dataModel.data))
+    dispatch(setDataCategory('company', dataCompany))
+    dispatch(setDataCategory('device', dataDevice))
+    dispatch(setDataCategory('models', dataModel))
     dispatch(setActiveWatcher('apple', 'company'))
     dispatch(setActiveWatcher('iphone', 'device'))
     dispatch(setActiveWatcher('iphone5s', 'model'))
