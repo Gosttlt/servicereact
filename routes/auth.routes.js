@@ -20,7 +20,8 @@ router.post(
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     errors: errors.array(),
-                    message: 'Не корректные данные при входе в систему'
+                    message: 'Не корректные данные при входе в систему',
+                    status: 0
                 })
             }
             let { email, password } = req.body
@@ -35,7 +36,10 @@ router.post(
                 return res.json({ message: 'Не верный e-mail или password', status: 0 })
             }
             const token = jwt.sign({ userId: user.id }, config.get('jwtSecret'), { expiresIn: '1h' })
-            res.json({ token: token, status: 1, userId: user.id, email })
+            res.json({
+                status: 1,
+                payload: { token: token, userId: user.id, email }
+            })
         }
         catch (e) {
             res.status(500).json({ message: 'Что то пошло не так, попробуйте сново login', status: 0 })

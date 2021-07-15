@@ -1,7 +1,7 @@
 import ApplePageContainer from 'pages/apple/appPageContainer'
 import AuthPageContainer from 'pages/auth/authPageContainer'
 import HomeContainer from 'pages/home/homeContainer'
-import PersonalAccountContainer from 'pages/personalAccount/personalAccountContainer'
+import PersonalAccountContainer from 'pages/account/personalAccountContainer'
 import { APPLE_ROUTE, AUTH_ROUTE, HOME_ROUTE, LK_ROUTE } from 'utils/routeConstants'
 
 
@@ -34,5 +34,9 @@ export const privateRoutes = [
     {
         path: APPLE_ROUTE,
         Component: ApplePageContainer,
+    },
+    {
+        path: AUTH_ROUTE,
+        Component: PersonalAccountContainer,
     },
 ]
