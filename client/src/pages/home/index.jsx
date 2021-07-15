@@ -36,7 +36,7 @@ export default function Home({
               wh={100}
             />
             <CotegoryBlock
-              head='Выберите device'
+              head='Выберите устройство'
               cotegory={cotegoryDevices}
               activityWatcher={activityWatcher.device}
               setActive={setActiveWatcher}

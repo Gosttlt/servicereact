@@ -1,5 +1,5 @@
 import Preloader from 'components/common/preloader/preloader'
-import TableItem from './tableItem/tableItem'
+import TableItem from './tableItem'
 import s from './s.module.css'
 import { useMemo } from 'react'
 
@@ -12,7 +12,7 @@ export default function TablePrice({ rows, isLoadingService }) {
         <div className="container">
             <div className={s.tablePriceBlock}>
                 <ul className={s.tableHead}>
-                    <li>Услуга</li><li>Время ремонта iPhone 5</li><li>Цена под ключ ( работа + запчасть )</li>
+                    <li>Услуга</li><li>Время ремонта</li><li>Цена под ключ ( работа + запчасть )</li>
                 </ul>
                 <div className={s.servicesBox}>
                     {isLoadingService ?
