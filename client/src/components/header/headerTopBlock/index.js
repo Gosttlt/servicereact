@@ -8,7 +8,7 @@ import AccountIconHeader from './accountIconHeader'
 
 
 export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLogout }) {
-
+    console.log(isAuth);
     return (
         <div className={`container ${s.headerTopBlock}`}>
             <HeaderLogo />
@@ -18,7 +18,7 @@ export default function HeaderTopBlock({ isAuth, userName, userEmail, setAuthLog
             {isAuth &&
                 <div className={s.lkLoginBlock} >
                     <AccountIconHeader icon="account_circle" userName={userName} userEmail={userEmail} />
-                    <HeaderLogin icon="login" text="Вход" onClick={setAuthLogout} />
+                    <HeaderLogin icon="logout" text="Выход" onClick={setAuthLogout} />
                 </div>
             }
             {!isAuth &&
