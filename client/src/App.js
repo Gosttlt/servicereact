@@ -13,9 +13,9 @@ import { setLogin } from 'store/authReducer/actions';
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('userData'))
+    const data = localStorage.getItem('userData')
     if (data && data.token) {
-      dispatch(setLogin(data))
+      dispatch(setLogin(JSON.parse(data)))
     }
   }, [dispatch])
 

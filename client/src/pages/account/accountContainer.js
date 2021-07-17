@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getAppointSuccess, setAppointSuccess } from 'store/accountReducer/actions'
-import { getUser } from "store/accountReducer/selectors"
+import { getUsers } from "store/accountReducer/selectors"
 import { getToken } from "store/authReducer/selectors"
 import PersonalAccount from "."
 
@@ -10,7 +10,7 @@ const AccountContainer = () => {
     const dispatch = useDispatch()
 
     const token = useSelector(getToken)
-    const userAppoints = useSelector(getUser)
+    const userAppoints = useSelector(getUsers)
 
     const [form, setForm] = useState({ service: '', date: '', model: '' })
 
@@ -22,7 +22,9 @@ const AccountContainer = () => {
 
     const fetcher = async () => {
         dispatch(setAppointSuccess(token, form))
+        setForm({ service: '', date: '', model: '' })
     }
+
 
 
     return (

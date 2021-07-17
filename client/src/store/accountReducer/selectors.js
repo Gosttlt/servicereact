@@ -1,2 +1,4 @@
-export const getUser = state => state.accountReducer.user
+
+
+export const getUsers = state => state.accountReducer.user
 

@@ -3,13 +3,12 @@ import Input from 'components/common/inputs'
 import s from './s.module.css'
 
 export default function PersonalAccount({ userAppoints, form, changeHandler, fetcher }) {
-
     let arr = userAppoints.map((u, i) => (
         <div key={i} className={s.appoint}>
             <AppointCol head="Дата записи" text={u.date} />
             <AppointCol head="Услуга" text={u.service} />
             <AppointCol head="Модель" text={u.model} />
-            <AppointCol head="Дата создания" text="16/07/21" />
+            <AppointCol head="Дата создания" text="20/20/20" />
         </div>
     )
     )
@@ -18,7 +17,6 @@ export default function PersonalAccount({ userAppoints, form, changeHandler, fet
         <div className="container">
             <AppointBox form={form} changeHandler={changeHandler} fetcher={fetcher} />
             <div>
-                <div>navBar</div>
                 <div className={s.appointBox}>
                     {arr}
                 </div>

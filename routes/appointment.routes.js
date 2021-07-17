@@ -16,6 +16,7 @@ router.post('/', auth, async (req, res) => {
 
         const appointment = new Appointment({ date, service, model, owner: req.user.userId })
         await appointment.save()
+
         res.status(201).json({ date, service, model })
 
     }
