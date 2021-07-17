@@ -1,0 +1,18 @@
+/** @format */
+
+.appointBox {
+  border-left: 1px solid #999;
+  width: 100%;
+}
+
+.appoint {
+  padding: 20px;
+  border-bottom: 1px solid #999;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-around;
+}
+.appoint:hover {
+  background: #f0f0f0;
+  transition: 0.3s;
+}

@@ -34,7 +34,7 @@ router.get('/', auth, async (req, res) => {
             r.dateCreate = r._id.getTimestamp().toISOString()
             return r
         })
-        res.json(dateCreate)
+        res.json({ data: dateCreate, status: 1 })
     }
     catch (e) {
         res.status(500).json({ message: 'Что то пошло не так, попробуйте сново' })

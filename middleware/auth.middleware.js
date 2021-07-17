@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
         const token = req.headers.authorization.split(' ')[1]
 
         if (!token) {
-            return res.status(401).json({ message: 'Нет авторизации' })
+            return res.status(401).json({ message: 'Нет авторизации', status: 0 })
         }
 
         const decoded = jwt.verify(token, config.get('jwtSecret'))
@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
         next()
 
     } catch (e) {
-        res.status(401).json({ message: 'Нет авторизации', })
+        res.status(401).json({ message: 'Нет авторизации', status: 0 })
 
     }
 }
