@@ -14,7 +14,6 @@ function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('userData'))
-    console.log(data);
     if (data && data.token) {
       dispatch(setLogin(data))
     }

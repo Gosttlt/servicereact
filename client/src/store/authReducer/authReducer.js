@@ -1,4 +1,4 @@
-import { SET_AUTH_LOGOUT, SET_AUTH_LOGIN, SET_ERROR_AUTH } from "./type";
+import { SET_AUTH_LOGOUT, SET_AUTH_LOGIN, SET_ERROR_AUTH, SET_AUTH_REGISTR } from "./type";
 
 
 let initialState = {

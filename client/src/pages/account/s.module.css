@@ -1,14 +1,39 @@
 /** @format */
 
-.accountPageBox {
-  margin: 30px auto;
-  width: 300px;
-  border: 1px solid gray;
-  padding: 10px;
-  border-radius: 5px;
-}
 .formBox {
   margin: 50px auto;
   width: 500px;
   text-align: center;
+  display: flex;
+}
+.appointBox {
+  border: 1px solid #999;
+  border-bottom: none;
+  margin-bottom: 50px;
+  box-shadow: 2px 2px 8px 1px #e6e6e6;
+}
+
+.appoint {
+  padding: 20px;
+  border-bottom: 1px solid #999;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-around;
+}
+.appoint:hover {
+  background: #f0f0f0;
+  transition: 0.3s;
+}
+.colBox {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.colHead {
+  font-weight: 600;
+  padding: 5px;
+}
+.colText {
+  color: #999;
 }

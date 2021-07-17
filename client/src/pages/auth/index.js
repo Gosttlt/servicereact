@@ -26,8 +26,8 @@ export default function AuthPage({ setAuthLogin, setAuthRegister, isErrorAuth })
                 }
             </div>
             <div>
-                <Input onChange={changeHandler} placeholder="Введите e-mail" name="email" label="Email" />
-                <Input onChange={changeHandler} placeholder="Введите пароль" name="password" label="Password" type="password" />
+                <Input onChange={changeHandler} placeholder="Введите e-mail" name="email" label="Email" value={form.email} />
+                <Input onChange={changeHandler} placeholder="Введите пароль" name="password" label="Password" type="password" value={form.password} />
             </div>
             <Button onClick={onSetAuthLogin} name="Войти" />
             <Button onClick={onSetAuthRegister} name="Регистрация" />

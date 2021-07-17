@@ -11,7 +11,7 @@ const router = Router()
 router.post(
     '/login',
     [
-        check('email', 'Введите корректный e-mail').normalizeEmail().isEmail(),
+        check('email', 'Введите корректный e-mail').isEmail(),
         check('password', 'Введите пароль').exists()
     ],
     async (req, res) => {
@@ -28,7 +28,7 @@ router.post(
 
             let user = await User.findOne({ email })
             if (!user) {
-                return res.json({ message: 'Не верный e-mail или пароль', status: 0 })
+                return res.status(400).json({ message: 'Не верный e-mail или пароль1', status: 0 })
             }
             let isMatch = await bcrypt.compare(password, user.password)
 

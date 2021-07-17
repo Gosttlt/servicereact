@@ -8,7 +8,7 @@ const fetcher = async (url, method = 'GET', data, headers = { 'Content-Type': 'a
         let resp = await response.json()
         return resp
     }
-    let response = await fetch(url)
+    let response = await fetch(url, { headers })
     let resp = await response.json()
     return resp
 }
@@ -16,6 +16,34 @@ const fetcher = async (url, method = 'GET', data, headers = { 'Content-Type': 'a
 export const authAPI = {
     getLogin: (data) => fetcher('api/auth/login', 'POST', data),
     getRegister: (data) => fetcher('api/auth/register', 'POST', data),
+}
+
+
+export const appointAPI = {
+    getAppoint: async (token) => {
+        const data = await fetch('/api/appoint', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        const json = await data.json()
+        return json
+    },
+    setAppoint: async (token, form) => {
+        const data = await fetch('/api/appoint',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ ...form })
+            }
+        )
+        const json = await data.json()
+        return json
+    }
 }
 
 export const productAPI = {

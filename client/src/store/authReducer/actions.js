@@ -1,5 +1,5 @@
 import { authAPI } from "api";
-import { SET_AUTH_LOGOUT, SET_AUTH_LOGIN, SET_ERROR_AUTH } from "./type";
+import { SET_AUTH_LOGOUT, SET_AUTH_LOGIN, SET_ERROR_AUTH, SET_AUTH_REGISTR } from "./type";
 
 const storageName = 'userData'
 
@@ -18,6 +18,7 @@ export const setAuthLogin = (payload) => async (dispatch) => {
     if (!data.status) {
         return dispatch(setError(data))
     }
+
     dispatch(setLogin(data.payload))
     localStorage.setItem(storageName, JSON.stringify(data.payload))
 }
@@ -27,5 +28,10 @@ export const setAuthRegister = (payload) => async (dispatch) => {
     if (!data.status) {
         return dispatch(setError(data))
     }
-    dispatch(setLogin(data.payload))
+    let pay = await authAPI.getLogin(payload)
+    if (!pay.status) {
+        return dispatch(setError(data))
+    }
+    dispatch(setLogin(pay.payload))
+    localStorage.setItem(storageName, JSON.stringify(data.payload))
 }
