@@ -17,7 +17,7 @@ router.post('/', auth, async (req, res) => {
         const appointment = new Appointment({ date, service, model, owner: req.user.userId })
         await appointment.save()
 
-        res.status(201).json({ date, service, model })
+        res.status(201).json({ date, service, model, dateCreate: appointment._id.getTimestamp().toISOString() })
 
     }
     catch (e) {
@@ -29,8 +29,12 @@ router.post('/', auth, async (req, res) => {
 router.get('/', auth, async (req, res) => {
     try {
 
-        const appointment = await Appointment.find({ owner: req.user.userId })
-        res.json(appointment)
+        let appointment = await Appointment.find({ owner: req.user.userId }).sort({ _id: -1 })
+        let dateCreate = appointment.map(r => {
+            r.dateCreate = r._id.getTimestamp().toISOString()
+            return r
+        })
+        res.json(dateCreate)
     }
     catch (e) {
         res.status(500).json({ message: 'Что то пошло не так, попробуйте сново' })
@@ -39,6 +43,7 @@ router.get('/', auth, async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const appointment = await Appointment.findById(req.params.id)
+
         res.json(appointment)
     }
     catch (e) {

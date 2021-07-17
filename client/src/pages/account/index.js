@@ -8,7 +8,7 @@ export default function PersonalAccount({ userAppoints, form, changeHandler, fet
             <AppointCol head="Дата записи" text={u.date} />
             <AppointCol head="Услуга" text={u.service} />
             <AppointCol head="Модель" text={u.model} />
-            <AppointCol head="Дата создания" text="20/20/20" />
+            <AppointCol head="Дата создания" text={u.dateCreate} />
         </div>
     )
     )

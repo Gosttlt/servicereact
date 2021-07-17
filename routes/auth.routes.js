@@ -28,7 +28,7 @@ router.post(
 
             let user = await User.findOne({ email })
             if (!user) {
-                return res.status(400).json({ message: 'Не верный e-mail или пароль1', status: 0 })
+                return res.status(400).json({ message: 'Не верный e-mail или пароль', status: 0 })
             }
             let isMatch = await bcrypt.compare(password, user.password)
 

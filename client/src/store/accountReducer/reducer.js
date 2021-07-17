@@ -2,7 +2,7 @@ import { GET_APPOINT, SET_APPOINT } from "./type";
 
 
 let initialState = {
-    user: [{ service: 'Замена стекла', date: '16/07/21', model: 'iPhone 5s' }]
+    user: [{ service: 'Замена стекла', date: '16/07/21', model: 'iPhone 5s', dateCreate: '2021-07-17T10:20:11.000Z' }]
 }
 
 const accountReducer = (state = initialState, action) => {

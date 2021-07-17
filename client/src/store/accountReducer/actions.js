@@ -15,5 +15,6 @@ export const getAppointSuccess = (token) => async (dispatch) => {
 }
 export const setAppointSuccess = (token, form) => async (dispatch) => {
     const data = await appointAPI.setAppoint(token, form)
+    console.log(data);
     dispatch(setAppoint(data))
 }
