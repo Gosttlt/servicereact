@@ -3,10 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from 'components/footer';
 import AppRouter from 'components/appRouter';
 import Header from 'components/header';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLogin } from 'store/authReducer/actions';
-
+import Preloader from 'components/common/preloader'
 
 
 
@@ -17,6 +17,7 @@ function App() {
     if (data) {
       dispatch(setLogin(JSON.parse(data)))
     }
+
   }, [dispatch])
 
   return (
@@ -24,7 +25,9 @@ function App() {
       <div className="App">
         <Header />
         <div className="main">
-          <AppRouter />
+          <Suspense fallback={<Preloader />} >
+            <AppRouter />
+          </Suspense>
         </div>
         <Footer />
       </div>

@@ -5,7 +5,7 @@ import CotegoryHead from './cotegoryHead'
 import CotegoryItems from './cotegoryItems/cotegoryItems'
 
 export default function CotegoryBlock({ cotegory, activityWatcher, setActive, head, name, wh }) {
-
+    console.log('render cotegory block');
     return (
         <div className="container">
             <CotegoryHead head={head} />

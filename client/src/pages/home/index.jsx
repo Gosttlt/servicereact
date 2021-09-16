@@ -4,7 +4,7 @@ import TopBlockPage from 'components/common/topBlockPage'
 import TeblePriceContainer from 'components/cotegoryBlock/tablePrice/teblePriceContainer'
 import ModelBlockContainer from 'components/cotegoryBlock/modelBlock/modelBlockContainer'
 import s from './s.module.css'
-import Preloader from 'components/common/preloader/preloader'
+import Preloader from 'components/common/preloader'
 import CotegoryBlock from 'components/cotegoryBlock'
 
 export default function Home({
@@ -15,6 +15,7 @@ export default function Home({
   cotegoryDevices,
   activityWatcher,
 }) {
+  console.log('render home')
   return (
     <>
       <TopBlockPage

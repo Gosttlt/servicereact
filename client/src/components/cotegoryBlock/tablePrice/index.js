@@ -1,4 +1,4 @@
-import Preloader from 'components/common/preloader/preloader'
+import Preloader from 'components/common/preloader'
 import TableItem from './tableItem'
 import s from './s.module.css'
 import { useMemo } from 'react'
