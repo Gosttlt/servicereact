@@ -1,0 +1,11 @@
+.header__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+}
+
+.lkLoginBlock {
+  display: flex;
+  align-items: center;
+}

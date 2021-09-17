@@ -1,6 +1,6 @@
 /** @format */
 
-import TopBlockPage from 'components/common/topBlockPage'
+import TopBlockPage from 'components/topBlockPage'
 import TeblePriceContainer from 'components/cotegoryBlock/tablePrice/teblePriceContainer'
 import ModelBlockContainer from 'components/cotegoryBlock/modelBlock/modelBlockContainer'
 import s from './s.module.css'
