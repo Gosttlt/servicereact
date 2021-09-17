@@ -1,5 +1,5 @@
 import s from 'components/cotegoryBlock/s.module.css'
-import CotegoryItem from "components/cotegoryBlock/cotegoryItems/cotegoryItem"
+import CotegoryItem from 'components/cotegoryBlock/cotegoryItems/cotegoryItem'
 import { useMemo } from "react"
 
 export default function CotegoryItems({ cotegory, active, setActive, wh, name }) {

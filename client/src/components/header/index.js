@@ -20,17 +20,15 @@ export default React.memo(function Header({ isAuth, userName, userEmail, setAuth
                     {true ?
                         <div className={s.lkLoginBlock} >
                             <AccountIconHeader
-                                icon="login"
-                                userName="Войти"
-                                userEmail="userEmail"
-                                url="/auth" />
+                                icon="account_circle"
+                                userName="userEmail"
+                                url="/lk" />
                         </div> :
                         <div className={s.lkLoginBlock} >
                             <AccountIconHeader
-                                icon="account_circle"
+                                icon="login"
                                 userName="Войти"
-                                userEmail="userEmail"
-                                url="/lk" />
+                                url="/auth" />
                         </div>
                     }
                 </div>

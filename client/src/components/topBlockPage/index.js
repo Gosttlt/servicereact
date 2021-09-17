@@ -5,7 +5,6 @@ import s from './s.module.css'
 
 
 export default function TopBlockPage({ children }) {
-  console.log('render block');
   return (
     <div className={s.topBlock}>
       <Container>

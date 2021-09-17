@@ -4,17 +4,24 @@ import React from 'react'
 import Container from 'components/shared/container'
 
 const itemNavBar = [
-    { url: '/', nameMenu: 'home', classN: 'material-icons', metaName: 'Home' },
+    { url: '/', nameMenu: 'Home', classN: 'material-icons', metaName: 'home' },
     { url: '/apple', nameMenu: 'Ремотн Apple' },
-    { url: '/', nameMenu: 'Ремонт телефонов' },
-    { url: '/', nameMenu: 'Ремонт ноутбуков и ПК' },
-    { url: '/', nameMenu: 'Ремонт планшетов' },
-    { url: '/', nameMenu: 'Контакты' },
+    { url: '/1', nameMenu: 'Ремонт телефонов' },
+    { url: '/2', nameMenu: 'Ремонт ноутбуков и ПК' },
+    { url: '/3', nameMenu: 'Ремонт планшетов' },
+    { url: '/4', nameMenu: 'Контакты' },
 ]
 
 
 export default React.memo(function Navbar() {
-    const navItems = itemNavBar.map(i => <ItemNav url={i.url} key={i.nameMenu} nameMenu={i.nameMenu} classN={i.classN} metaName={i.metaName} />)
+    const navItems = itemNavBar.map(i => (
+        <ItemNav
+            url={i.url}
+            key={i.nameMenu}
+            nameMenu={i.nameMenu}
+            classN={i.classN}
+            metaName={i.metaName} />
+    ))
     console.log('navbar');
     return (
         <nav className={s.navBar}>

@@ -4,7 +4,6 @@ import LeftBlockHead from './leftBlockHead';
 import AdvantagesItems from "./advantagesItems";
 
 export default function LeftBlock({ h1Target, city }) {
-    console.log('render left');
     return (
         <div className={s.topLeftBlock}>
             <LeftBlockHead h1Target={h1Target} city={city} />
