@@ -1,4 +1,4 @@
-import FooterLogo from './footerLogo'
+import FooterLogo from './footerLogo/footerLogo'
 import s from './s.module.css'
 import React from 'react'
 import Container from 'components/shared/container'

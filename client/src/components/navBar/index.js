@@ -22,7 +22,6 @@ export default React.memo(function Navbar() {
             classN={i.classN}
             metaName={i.metaName} />
     ))
-    console.log('navbar');
     return (
         <nav className={s.navBar}>
             <Container>

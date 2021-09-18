@@ -1,11 +1,9 @@
-/** @format */
-
 import TopBlockPage from 'components/topBlockPage'
-import TeblePriceContainer from 'components/cotegoryBlock/tablePrice/teblePriceContainer'
-import ModelBlockContainer from 'components/cotegoryBlock/modelBlock/modelBlockContainer'
+import TeblePriceContainer from 'components/catalog/tablePrice/teblePriceContainer'
+import ModelBlockContainer from 'components/catalog/modelBlock/modelBlockContainer'
 import s from './s.module.css'
 import Preloader from 'components/common/preloader'
-import CotegoryBlock from 'components/cotegoryBlock'
+import CotegoryBlock from 'components/catalog'
 
 export default function Home({
   isLoading,

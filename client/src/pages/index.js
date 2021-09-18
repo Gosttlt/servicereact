@@ -1,4 +1,4 @@
-import CotegoryBlock from 'components/cotegoryBlock'
+import CotegoryBlock from 'components/catalog'
 import Layout from 'components/layout'
 import TopBlockPage from 'components/topBlockPage'
 import LeftBlock from 'components/topBlockPage/leftBlock'

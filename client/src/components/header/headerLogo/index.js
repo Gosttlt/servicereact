@@ -7,7 +7,6 @@ import React from 'react'
 
 
 export default React.memo(function HeaderLogo() {
-    console.log('rener logo');
     return (
         <Link href="/">
             <a>
