@@ -1,7 +1,4 @@
-
-
-
-import CotegoryHead from './cotegoryHead'
+import CotegoryHead from './CotegoryHead'
 import CotegoryItems from './cotegoryItems/cotegoryItems'
 
 export default function CotegoryBlock({ cotegory, activityWatcher, setActive, head, name, wh }) {

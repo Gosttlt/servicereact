@@ -1,4 +1,4 @@
-import CotegoryHead from 'components/cotegoryBlock/cotegoryHead'
+import CotegoryHead from '../CotegoryHead'
 import ItemsModel from './itemsModel'
 
 

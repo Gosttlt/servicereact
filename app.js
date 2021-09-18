@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-app.use(express.json({ extended: true })) // что бы парсить пост запросы из бади в json
+app.use(express.json({ extended: true })) // что бы парсить пост запросы из боди в json
 app.use('/api/auth', require('./routes/auth.routes')) // подключаем роут на регистрацию
 app.use('/api/product', require('./routes/product.routes')) // подключаем роут
 app.use('/api/modelsv', require('./routes/modelsv.routes')) // подключаем роут
